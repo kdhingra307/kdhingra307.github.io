@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://kdhingra307.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://kdhingra307.github.io/" rel="alternate" type="text/html" /><updated>2023-01-28T09:34:55-06:00</updated><id>https://kdhingra307.github.io/feed.xml</id><title type="html">Notes &amp;amp; Thoughts</title><entry><title type="html">intro-to-python</title><link href="https://kdhingra307.github.io/posts/intro-to-python" rel="alternate" type="text/html" title="intro-to-python" /><published>2023-01-17T00:00:00-06:00</published><updated>2023-01-17T00:00:00-06:00</updated><id>https://kdhingra307.github.io/posts/intro-to-python</id><content type="html" xml:base="https://kdhingra307.github.io/posts/intro-to-python"><![CDATA[<h1 id="python">Python</h1>
+<hr />
+
+<h2 id="programming-language">Programming Language</h2>
+
+<ul>
+  <li>C</li>
+  <li>Java</li>
+  <li>Python</li>
+  <li>rust</li>
+  <li>javascript</li>
+  <li>c++</li>
+  <li>go</li>
+  <li>
+    <hr />
+    <h2 id="essential-components">Essential Components</h2>
+  </li>
+</ul>
+
+<p>–</p>
+<ul>
+  <li>Input</li>
+  <li>Function</li>
+  <li>Output</li>
+</ul>
+
+<p>–</p>
+<ul>
+  <li>Variables</li>
+  <li>Data Structures</li>
+  <li>Conditions</li>
+  <li>Jump</li>
+  <li>Operations
+    <ul>
+      <li>Airthmetic
+        <ul>
+          <li>bitwise</li>
+          <li>logical</li>
+        </ul>
+      </li>
+      <li>I/O</li>
+      <li>String</li>
+      <li>Arrays</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="syntax">Syntax</h2>
+
+<p>–</p>
+<h3 id="variables">Variables</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int x = 5; or String x = "5";
+x = 5 vs int(5) vs int(1.2) vs int("hellow")
+x,y,z = hello
+y = str('5')
+
+x = 5 //int
+y = 5 //string
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">x+y=?</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>y = int('5.1b')
+</code></pre></div></div>
+
+<p>note: implicit vs explicit casting;</p>
+
+<p>–</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = 'hello'
+x[1:5]
+x[1:]
+x[-2:]
+x[:4] = "0"
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span>
+<span class="n">x</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">x</span> <span class="o">|=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="n">x</span> <span class="o">&amp;=</span> <span class="p">{</span><span class="n">b</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="n">x</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">x</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">x</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">])</span>
+<span class="n">x</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="o">|</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>
+</code></pre></div></div>
+<p>–</p>
+
+<h2 id="data-types">Data Types</h2>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">int vs float</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">string vs list</code></p>
+  </li>
+  <li><code class="highlighter-rouge">set vs frozenset</code></li>
+  <li>
+    <p>list vs tupple</p>
+  </li>
+  <li><code class="highlighter-rouge">Nonetype</code></li>
+</ul>
+
+<p>note: int vs float, data size, string is immutable</p>
+
+<p>–</p>
+<h2 id="logic">Logic</h2>
+<ul>
+  <li>Condition</li>
+  <li>Loops
+    <ul>
+      <li>for vs while?</li>
+    </ul>
+  </li>
+  <li>Comprehension</li>
+</ul>
+
+<p>note: if vs switch</p>
+
+<p>–</p>
+<h2 id="functions">Functions</h2>
+<ul>
+  <li>Why do we need them?
+    <ul>
+      <li>code maintainable and readable</li>
+      <li>re-usable</li>
+      <li>abstraction</li>
+    </ul>
+  </li>
+  <li>Lambda vs Normal
+    <ul>
+      <li>anonymous
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">last_element</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">arr</span><span class="p">:</span> <span class="n">arr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>Scope of Variable
+    <ul>
+      <li>References (or pointers)
+        <ul>
+          <li>Object Id
+            <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">assert</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+<span class="k">assert</span> <span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+<span class="k">assert</span> <span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
+</code></pre></div>            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>note: references is passing the reference of the mutable objects by assignment.</p>
+
+<p>–
+How can we miss recursion…</p>
+<ul>
+  <li>Recursion vs Iteration
+    <ul>
+      <li>Overhead</li>
+      <li>Code Complexity</li>
+    </ul>
+  </li>
+</ul>
+
+<p>–
+Comments</p>
+
+<hr />
+<h2 id="file-handling">File Handling</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>open(file_name, mode)
+# mode ("r", "w", "a") with optional "b"
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for i in range(1000):
+	file = open("tmp/{}".format(i), "w")
+	file.write("hello")
+file.flush()
+file.close()
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>with open("tmp", "w") as file:
+	file.write("hello")
+
+</code></pre></div></div>
+
+<h2 id="note-enter-and-exit">note: <strong>enter</strong>, and <strong>exit</strong></h2>
+<h2 id="exception-handling">Exception Handling</h2>
+
+<ul>
+  <li>avoid program termination
+    <ul>
+      <li>abstraction to users</li>
+      <li>custom exceptions</li>
+      <li>plan for edge case</li>
+      <li>ValueError/HTTPError</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.9</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="nb">ValueError</span><span class="p">()</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">print</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"Weighted coin with 10% probability"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"Weighted coin with 90% probability"</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"Coin toss done"</span><span class="p">)</span>
+
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">budget</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="n">FlockErrorException</span><span class="p">(</span><span class="s">"Budget Increased Exception"</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">e</span><span class="p">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">"Budget Increased Exception"</span><span class="p">:</span>
+		<span class="k">print</span><span class="p">(</span><span class="s">"budget exceeded"</span><span class="p">)</span>
+		<span class="c1">#send alert to the team
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="k">class</span> <span class="nc">FlockErrorException</span><span class="p">(</span><span class="nb">Exception</span><span class="p">):</span>
+		<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+			<span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+			<span class="c1">#send alert to the team
+</span>
+</code></pre></div></div>
+
+<p>note: super using demo in ad-rotation project</p>
+
+<p>–</p>
+<h2 id="libraries">Libraries</h2>
+<ul>
+  <li>Requests</li>
+  <li>Classes vs Modules</li>
+  <li>functools</li>
+  <li>collections</li>
+  <li>Json
+    <ul>
+      <li>key-value pairs</li>
+      <li>recursive</li>
+      <li>arrays</li>
+    </ul>
+  </li>
+  <li>Yaml
+    <ul>
+      <li>indentation</li>
+      <li>key-value maps</li>
+      <li>config</li>
+    </ul>
+  </li>
+  <li>Numpy
+    <ul>
+      <li>pandas, scipy</li>
+    </ul>
+  </li>
+  <li>typing</li>
+</ul>
+
+<p>note: functools cache vs partial-functions; collections OrderedDict, Counter(most_common, total)</p>
+
+<p>–</p>
+
+<h2 id="testing">Testing</h2>
+
+<ul>
+  <li>Importance of Testing
+    <ul>
+      <li>Help in finding out bugs before hand,
+        <ul>
+          <li>help in finding out bugs in all of the components for future</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def test1(a):
+	assert a == False
+def test2(a):
+	assert a.contains(345)
+def test3(a):
+	....
+	
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import unittest
+
+class WidgetTestCase(unittest.TestCase):
+    def setUp(self):
+        self.widget = Function('The widget')
+
+    def tearDown(self):
+        self.widget.dispose()
+    
+    def test1(self):
+	    self.assertEqual(self.widget.label, "The widget", "Title")
+    
+</code></pre></div></div>
+
+<p>note: acts as a checkcase to ensure that changes in another block of code does not affect the current</p>
+
+<hr />
+
+<h2 id="code-structure">Code Structure</h2>
+
+<ul>
+  <li>Code
+    <ul>
+      <li>Dependencies</li>
+      <li>structured</li>
+      <li></li>
+    </ul>
+  </li>
+  <li>ValueError model.common</li>
+  <li>ValueEror common_testin</li>
+  <li>Cron
+    <ul>
+      <li>scheduling process</li>
+      <li>automating common task</li>
+    </ul>
+  </li>
+  <li>Structure
+    <ul>
+      <li></li>
+    </ul>
+  </li>
+  <li>Hierarchy
+    <ul>
+      <li></li>
+    </ul>
+  </li>
+  <li>Navigation b/w code base</li>
+  <li>Deployment cycle</li>
+  <li>Dependencies management
+    <ul>
+      <li>pip install numpy</li>
+      <li>pip install numpy==1.14</li>
+      <li>pip install -r requirements.txt</li>
+      <li>java
+        <ul>
+          <li>pomfile</li>
+        </ul>
+      </li>
+      <li>c
+        <ul>
+          <li>cmake/makefile</li>
+        </ul>
+      </li>
+      <li>javascript
+        <ul>
+          <li>package.json</li>
+        </ul>
+      </li>
+      <li>flutter
+        <ul>
+          <li>pubspec.yaml</li>
+        </ul>
+      </li>
+      <li></li>
+    </ul>
+  </li>
+  <li>Logging Aggregation</li>
+  <li>Test Cases</li>
+  <li>Debugging/Performance Analysis</li>
+</ul>]]></content><author><name></name></author><summary type="html"><![CDATA[Python]]></summary></entry><entry><title type="html">Colorization - Sampling Color from GrayScale and I.R. Images</title><link href="https://kdhingra307.github.io/notes/study-of-colorization" rel="alternate" type="text/html" title="Colorization - Sampling Color from GrayScale and I.R. Images" /><published>2021-01-14T00:00:00-06:00</published><updated>2021-01-14T00:00:00-06:00</updated><id>https://kdhingra307.github.io/notes/Colorization</id><content type="html" xml:base="https://kdhingra307.github.io/notes/study-of-colorization"><![CDATA[<p>Given a grayscale image, it is a daunting task, even for a human, to visualize it in color. See Figure 1 for examples. However, a human may try to find semantic clues like texture and world knowledge to assign colors to objects. For example, the grass is mostly green, or the sky is mostly blue. But these clues may also fail sometimes, as shown in Figure 1(middle). Thus, in this work, the focus was on assigning a plausible set of colors to the Image, which may or may not be the same as the ground truth.</p>
+
+<p><img src="../_assets/imgs/2021-01-21-15-43-47.png" alt="" /></p>
+
+<p><em>Fig:1 GrayScale Images and Corresponding Color</em></p>
+
+<blockquote>
+  <p>The primary motivation behind pursuing this problem was that many images do not have color information. Also, the problem of Colorization is self-supervised and does not require a pair-wise dataset.</p>
+</blockquote>
+
+<p>The aim is to solve it in generative fashion, such that if we feed the same grayscale Image to the network k times, it may generate different output each time. A generative network’s benefit is that it may color the cloth’s stripes (Figure 2), gray or red.</p>
+
+<p><img src="../_assets/imgs/2021-01-22-11-34-00.png" alt="" /></p>
+
+<p><em>Fig:2 Plants in the left Image are entirely green, not in the right</em></p>
+
+<p>The solution is based on PixColor, which is state of the art autoregressive generative neural networks for Colorization, i.e., the output of $i^{th}$ pixel is not just conditioned on the latent representation of the grayscale Image, X but also on the previous outputs, $[i-t, i-t+1, i-t+2\ …\ i-1]$ where t denotes the receptive field.</p>
+
+<p>Given $X \in [H, W]$, we first extracts the features $Y_1$ using Resnet-101 of size $[\frac{H}{4}, \frac{W}{4}, 1024]$. These features are then passed into an adaption network and use three convolution layers to adapt the features required by pixelcnn. The output from the adaption network is of size $[\frac{H}{4}, \frac{W}{4}, 64]$, and is fed into conditional pixelcnn. It masks the weights of a convolutional layer to prohibit pixel $x_i$ from using any information about the future samples $(x_{i+1:N})$.</p>
+
+<p>Training is the same as that of any other end-to-end trainable architecture (as ground truth data was used under teacher training mechanism), but during testing, for each pixel $i$, the class is sampled from a multinomial distribution defined by the softmax output of the network.</p>
+
+<p><img src="../_assets/imgs/2021-01-22-15-36-30.png" alt="" />
+<em>Fig:3 Result of Colorization Algorithm</em></p>
+
+<p>The first seven images in carousal(at the top) are the PixColor algorithm results with key insights from each of the Images.</p>
+
+<h2 id="extension-towards-ir-images">Extension towards I.R. images</h2>
+
+<p>I decided to continue working on image colorization during my next semester, focusing on ​reducing the artifacts and ​improving larger objects’ coloring​. The output from pixelcnn is given to a fully convolutional network, acting as a denoiser, inspired by Tacotron, a source synthesis architecture.
+<img src="../_assets/imgs/2021-01-22-15-16-49.png" alt="" />
+<em>Fig:4 Correction of Green Artifact as shown in left Image</em></p>
+
+<p>After that, my professor suggested applying image colorization on I.R. images. In applications under low lighting, I.R. cameras come in handy, but interpreting I.R. images is not straightforward for a human, and hence translating to RGB improves its understandability. I.R. images introduced two challenges, i) it is no longer a self-supervised task and requires a parallel dataset, ii) it is computationally expensive since with grayscale images, we can learn the color information at less spatial resolution(Figure 5-middle) and upscale it, with minimal impact on visual quality but with I.R. images, we need to learn Luminicance too(Figure 5-bottom).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input Image</th>
+      <th><img src="../_assets/imgs/2021-01-22-15-22-11.png" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Color channels<br /> downscaled and<br /> Interploated</td>
+      <td><img src="../_assets/imgs/2021-01-22-15-22-58.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td>All channels are<br /> downscaled and<br /> interpolated</td>
+      <td><img src="../_assets/imgs/2021-01-22-15-23-21.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Figure 5: Effect of downsampling on image quality</em></p>
+
+<p>For I.R. to RGB, I did not directly use PixelColor to generate color images but first used ImageGAN with wassterin loss. It ended up being blurry because we were averaging the loss over all of the pixels (Table - 1).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input - IR</th>
+      <th>Target - RGB</th>
+      <th>Output - RGB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-22-15-41-01.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-22-15-41-24.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-22-15-41-32.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-22-15-42-40.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-22-15-42-49.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-22-15-42-57.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Table:1 Blurry Output when GAN’s are not used</em></p>
+
+<p>An I.R. image is first passed through GAN, which generates grayscale output followed by PixColor for sampling RGB from the generated grayscale.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input I.R.</th>
+      <th>Target GrayScale</th>
+      <th>Generated GrayScale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-24-19-26-49.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-27-04.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-27-15.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-24-19-28-14.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-28-30.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-28-46.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-24-19-29-55.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-30-02.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-30-08.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-24-19-44-27.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-44-42.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-44-49.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-24-19-45-59.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-46-12.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-46-25.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-24-19-48-05.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-48-17.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-48-30.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Table 2: Output of ImageGAN</em></p>
+
+<p>The ImageGAN model produced close to ground truth for many situations (Table 2 first four rows). Still, the model’s performance deteriorated when uncommon objects were present in the I.R. image, like a person on the cycle or person themselves, highlighting the importance of richer data sources.</p>
+
+<p>The last five images in carousal(at the top) are the results of the I.R. to color algorithm with key insights from each of the Images.</p>
+
+<h2 id="datasets">Datasets</h2>
+
+<p>The ADE20K  scene parsing dataset was used for PixColor training; it has 20K training and 1.5k validation samples. Also, there was a pretrained resnet101 network, which helped speed up the training process.
+For I.R. to RGB translation, the kaist multispectral benchmark was used. It is divided into multiple files, with each file consisting of over 10000 images, but it lacks the spatial resolution. I tested six different datasets that have pair-wise I.R. and RGB images and found it to be most aligned.</p>
+
+<h2 id="training-and-analysis">Training and Analysis</h2>
+<p>PixColor was trained for 50 epochs, in 100% teacher-training mechanism, i.e. during training pixelcnn autoregressive considers ground truth samples as previous t inputs. The ImageGAN was trained for 150 epochs, I stopped after 150 epochs due to computation constraints. Evaluating generative models is very hard, that’s why I tested the color distribution generated by the PixColor and observed biases towards the brown color which was present in the ADE20k data itself.</p>
+
+<p><img src="../_assets/imgs/2021-01-24-21-53-44.png" alt="" /></p>
+
+<p>Currently, I am studying more about GANs to train them effectively with fewer data points, if you have any questions or suggestion, please let me know on <a href="https://twitter.com/itskdme">Twitter</a> or <a href="https://www.instagram.com/itskd.me/">instagram</a>.</p>
+
+<h3 id="references">References</h3>
+<ul>
+  <li>Guadarrama, Sergio, et al. “Pixcolor: Pixel recursive colorization.” arXiv preprint arXiv:1705.07208 (2017).</li>
+  <li>Salimans, Tim, et al. “Pixelcnn++: Improving the pixelcnn with discretized logistic mixture likelihood and other modifications.” arXiv preprint arXiv:1701.05517 (2017).</li>
+  <li>Oord, Aaron van den, et al. “Conditional image generation with pixelcnn decoders.” arXiv preprint arXiv:1606.05328 (2016).</li>
+  <li>Zhou, Bolei, et al. “Scene parsing through ade20k dataset.” Proceedings of the IEEE conference on computer vision and pattern recognition. 2017.</li>
+  <li>Hwang, Soonmin, et al. “Multispectral pedestrian detection: Benchmark dataset and baseline.” Proceedings of the IEEE conference on computer vision and pattern recognition. 2015.</li>
+  <li>Wang, Yuxuan, et al. “Tacotron: Towards end-to-end speech synthesis.” arXiv preprint arXiv:1703.10135 (2017).</li>
+  <li>Arjovsky, Martin, Soumith Chintala, and Léon Bottou. “Wasserstein generative adversarial networks.” International conference on machine learning. PMLR, 2017.</li>
+  <li>Isola, Phillip, et al. “Image-to-image translation with conditional adversarial networks.” Proceedings of the IEEE conference on computer vision and pattern recognition. 2017.</li>
+</ul>]]></content><author><name></name></author><category term="notes" /><category term="colorization" /><category term="main" /><summary type="html"><![CDATA[Given a grayscale image, it is a daunting task, even for a human, to visualize it in color. See Figure 1 for examples. However, a human may try to find semantic clues like texture and world knowledge to assign colors to objects. For example, the grass is mostly green, or the sky is mostly blue. But these clues may also fail sometimes, as shown in Figure 1(middle). Thus, in this work, the focus was on assigning a plausible set of colors to the Image, which may or may not be the same as the ground truth.]]></summary></entry><entry><title type="html">How does tree metrics works</title><link href="https://kdhingra307.github.io/notes/tree_metrics_in_detail" rel="alternate" type="text/html" title="How does tree metrics works" /><published>2020-08-17T00:00:00-05:00</published><updated>2020-08-17T00:00:00-05:00</updated><id>https://kdhingra307.github.io/notes/metrics</id><content type="html" xml:base="https://kdhingra307.github.io/notes/tree_metrics_in_detail"><![CDATA[<h1 id="comparing-mlted-rf-distance-and-treevec">Comparing MLTED, RF distance, and TreeVec</h1>
+
+<h2 id="mlted">MLTED</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="../_assets/imgs/mlted_tree1.png" alt="" /></th>
+      <th><img src="../_assets/imgs/mlted_tree2.png" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tree 1</td>
+      <td>Tree 2</td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/mlted_tree3.png" alt="" /></td>
+      <td><img src="../_assets/imgs/mlted_tree4.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td>Tree 3</td>
+      <td>Tree 4</td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/mlted_tree5.png" alt="" /></td>
+      <td><img src="../_assets/imgs/mlted_tree6.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td>Tree 5</td>
+      <td>Tree 6</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>On comparision of tree 1 with tree3 and 4, the output from MLTED was 100% similarity and 0 edit distance with the normalized output as 1. Even though Tree(1) as only three nodes while others have many more. It is because Tree(1) is lacking information which other trees have but there is no error in the output which needs to be corrected. When the comparison is made between Tree(2) and Tree(1, 3, 4), edit distance of 14 was found in each case and similarity of 3 because only three nodes are common (a, b, c) in any pair and Tree(2) on the one hand is projecting taxa(b, c, d) as independent (parallel) while in other trees these three mutations happens simultaneously. Tree(5) deals with the condition when one tree shows different order of mutation than the other, while Tree(6) addons to Tree(5) by replacing the root with some other elements.</p>
+<ul>
+  <li>Tree(5)
+    <ul>
+      <li>With Tree(1)
+  100% similarity(of 10), as already described.</li>
+      <li>Tree(2)
+  Similarity of 3, as already described.</li>
+      <li>Tree(3)
+  Similarity of 9, and edit distance of 2. It is because 9 nodes are in correct position out of 10 (h is not in). 1 distance is required to remove h, and other to add it as child of g.</li>
+      <li>Tree(4)
+  Similarity of 4, as we have shuffled nodes.</li>
+    </ul>
+  </li>
+  <li>Tree(6)
+    <ul>
+      <li>
+        <p>With Tree(1)</p>
+
+        <p>Similarity of 8 and distance of 4,</p>
+        <ul>
+          <li>1 to remove a from b node.</li>
+          <li>1 to remove g from the b node.</li>
+          <li>1 to add b as child of a.</li>
+          <li>1 to add g as child of a.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>The final score can be calculated in two ways, $\frac{similarity}{num_nodes}$, or $\frac{edit_distance}{2*num_nodes}$.</p>
+
+<h2 id="rf-metric">RF metric,</h2>
+<p>It is implied by sum of two terms, A+B where A represents number of partition of data implied by $T_1$ but not $T_2$, while B represents versa. RF metric ensures that we have exact ordering of taxas in tree whereas MLTED only ensured that nodes(can contain multiple taxas) are in correct order.
+It is not possible to compare the trees present in the above tables, as RF metric requires same set of leaf nodes in the tree. Therefore, table given below will help in better understanding of RF metric.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="../_assets/imgs/rf_tree1.png" alt="" /></th>
+      <th><img src="../_assets/imgs/rf_tree2.png" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tree 1</td>
+      <td>Tree 2</td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/rf_tree3.png" alt="" /></td>
+      <td><img src="../_assets/imgs/rf_tree4.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td>Tree 3</td>
+      <td>Edges Labelled</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In RF distance, we are required to calculate the sum of splits which are present in tree 1 but not tree 2 and vice versa. Therefore using the edge labelling (in red color). We define split of each tree (q split is not required as it would be same as that of x) as</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tree 1</th>
+      <th>Tree 2</th>
+      <th>Tree 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C(x)ABD</td>
+      <td>C(x)ABD</td>
+      <td>B(x)ACD</td>
+    </tr>
+    <tr>
+      <td>D(y)ABC</td>
+      <td>B(y)ADC</td>
+      <td>C(y)ABD</td>
+    </tr>
+    <tr>
+      <td>B(z)ACD</td>
+      <td>D(z)ACB</td>
+      <td>D(z)ACB</td>
+    </tr>
+    <tr>
+      <td>A(r)BCD</td>
+      <td>A(r)BCD</td>
+      <td>A(r)BCD</td>
+    </tr>
+    <tr>
+      <td>BD(p)AC</td>
+      <td>BD(p)AC</td>
+      <td>CD(p)AB</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The splits between Tree(1) and Tree(2) as it does not matter which branch splits it because of being unrooted. While there are two unique splits in case of Tree(3) and Tree(1) or Tree(2). Thus, RF distance would be 2 in this case. If needed normalization then it is done by dividing it with total number of splits presents in both of the tree. Therotically, we are not bounded by comparing tree which does not have same number of leaves but tools does not allow.</p>
+
+<h2 id="treevec">TreeVec</h2>
+<p>It is also a metric for unrooted tree, and is primarly to pool different taxas based on their context. Basically, if the tree has leaf nodes as ${a_1, a_2, b_1, b_2}$. It implies $a_1, a_2$ belongs to category a while $b_1, b_2$ belongs to category b. No other method can help in this case. So, this method is very trivial.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Calculates</span> <span class="n">minimum</span> <span class="n">depth</span> <span class="n">from</span> <span class="nf">root</span><span class="o">(</span><span class="n">can</span> <span class="n">be</span> <span class="n">assigned</span> <span class="n">to</span> <span class="n">any</span> <span class="n">node</span><span class="o">)</span> <span class="n">to</span> <span class="n">pair</span> <span class="n">of</span> <span class="n">leaf</span> <span class="n">nodes</span><span class="o">.</span>
+<span class="nc">Take</span> <span class="n">mean</span> <span class="n">of</span> <span class="n">all</span> <span class="n">depths</span> <span class="k">for</span> <span class="n">all</span> <span class="n">categories</span><span class="o">.</span>
+<span class="nc">Compute</span> <span class="nc">Eucledian</span> <span class="n">distance</span> <span class="n">between</span> <span class="n">all</span> <span class="n">of</span> <span class="n">the</span> <span class="n">categories</span> <span class="k">for</span> <span class="n">all</span> <span class="n">of</span> <span class="n">the</span> <span class="n">trees</span><span class="o">.</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="../_assets/imgs/treevec_tree1" alt="" /></th>
+      <th><img src="../_assets/imgs/treevec_tree2" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tree(1)</td>
+      <td>Tree(2)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In this example, there are no examples in the subcategories.Minimum depth for each pair of the nodes is presented in the table below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pair</th>
+      <th>Tree(1)</th>
+      <th>Tree(2)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$a \to b$</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>$a \to c$</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>$a \to d$</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>$a \to e$</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>$b \to c$</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>$b \to d$</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>$b \to e$</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>$c \to d$</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>$c \to e$</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>$d \to e$</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Thus, final distance is calculated between these two vectors (eucleadian in this example), 4.89.</p>]]></content><author><name></name></author><category term="notes" /><category term="mlted" /><category term="tree_metrics" /><category term="phylogeny" /><category term="main" /><summary type="html"><![CDATA[Comparing MLTED, RF distance, and TreeVec]]></summary></entry><entry><title type="html">Basics of Phylogeny</title><link href="https://kdhingra307.github.io/notes/basics_of_clonal_evolution" rel="alternate" type="text/html" title="Basics of Phylogeny" /><published>2020-08-13T00:00:00-05:00</published><updated>2020-08-13T00:00:00-05:00</updated><id>https://kdhingra307.github.io/notes/phylogeny</id><content type="html" xml:base="https://kdhingra307.github.io/notes/basics_of_clonal_evolution"><![CDATA[<h1 id="phylogeny">Phylogeny</h1>
+
+<p>Given a VAFs, the task is to generate ancestoral tree such that it adheres to the principles of perfect phylogeny.</p>
+
+<h2 id="terminology">Terminology</h2>
+<ul>
+  <li>M matrix of size $(m, n)$ denotes the presence of $m^{th}$ mutation in $n^{th}$ location of the tumor.</li>
+  <li>V matrix of size $(m, n)$ represents VAFs of $m^{th}$ sample in $n^{th}$ location of the tumor.</li>
+  <li>T tree, provides the ancestoral representation of mutations based on phylogeny of M matrix.</li>
+  <li>Character, represents the language of mutation and in our case T or A denoting whether Tumor has been found at a particular site or not.</li>
+</ul>
+
+<h2 id="perfect-phylogeny">Perfect Phylogeny</h2>
+<blockquote>
+  <p>A phylogeny tree is perfect if it follows the following principle,</p>
+</blockquote>
+
+<ul>
+  <li>Mathematically, there should be no conflict between the mutations at any two sites.</li>
+</ul>
+
+\[Conflict (i, j) = 
+    \begin{cases}
+        true, &amp; \text{} M[k, j] \nleqslant M[k, i], M[k, j] \ngeqslant M[k, i], \forall k \in m.  \\
+        &amp;\text{} M[k, j] = M[k, i], \exists k \in m.  \\
+        false, &amp; otherwise
+    \end{cases}\]
+
+<p>$\quad$ for example,</p>
+
+\[M = \begin{bmatrix}
+    1&amp;0&amp;0&amp;0\\
+    1&amp;1&amp;1&amp;0\\
+    0&amp;0&amp;0&amp;1\\
+    0&amp;1&amp;0&amp;0
+\end{bmatrix}\]
+
+<p>$\quad$ Column 1 and 2 in Matrix, M are in conflict while column 3 and 4 are not.</p>
+
+<ul>
+  <li>
+    <p>Intutively, it is because we can say that that column 3 is ancestoral clone of column 2 but we cant say the same for column 1 and 2. While with column 3 and 4, we can say these are not ancestoral clones.</p>
+  </li>
+  <li>
+    <p>Perfect Phylogeny, also ensures the invention of new character<a class="citation" href="#vingron2003algorithms">[1]</a> is a rare events and does not happen in multiple sites across the phylogeny tree.</p>
+  </li>
+</ul>
+
+<h3 id="generation-of-evolutionary-tree-from-perfect-phylogeny">Generation of Evolutionary tree from Perfect Phylogeny</h3>
+<p>Given M, which has no conflict present in the columns, finding ancestors required as to</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input : M
+
+function(map)
+
+function(M):
+    sort(M) over columns.
+    append($C_0$, M), where $C_0 \in \{0\}.$ 
+    for $C, C'$ in columns, where $C' \ne C$:
+        if $C' \subseteq C$ then
+            draw an edge in T from $C \to C'$;
+    
+
+    for each_node in T:
+        get(characters required)
+        check : any row uses these characters
+        if yes:
+            label node as that row.
+</code></pre></div></div>
+
+<p>Example:</p>
+
+\[M = \begin{bmatrix}
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1\\
+0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0\\
+0&amp;0&amp;0&amp;0&amp;1&amp;1&amp;0\\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\\
+0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0\\
+0&amp;1&amp;1&amp;0&amp;0&amp;0&amp;0\\
+1&amp;1&amp;1&amp;0&amp;0&amp;0&amp;0
+\end{bmatrix},
+M_{sorted} = 
+\begin{bmatrix}
+1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1\\
+1&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0\\
+1&amp;0&amp;0&amp;1&amp;0&amp;0&amp;1&amp;0\\
+1&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0\\
+1&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+1&amp;1&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0\\
+1&amp;1&amp;1&amp;0&amp;1&amp;0&amp;0&amp;0
+\end{bmatrix}\]
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="../_assets/imgs/phylogeny_m_inpt.png" alt="" /></th>
+      <th><img src="../_assets/imgs/columns_decomposition.png" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tree with nodes representing columns</td>
+      <td>Tree with nodes representing mutation, and Yellow color nodes representing derived mutation</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="importance-of-vafs-in-phylogeny">Importance of VAFs in phylogeny</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="../_assets/imgs/phylogeny_vaf_inpt.png" alt="" /></th>
+      <th><img src="../_assets/imgs/vaf_columns_decomposition.png" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tree with nodes representing columns</td>
+      <td>Tree with nodes representing mutation, and Yellow color nodes representing derived mutation</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When we added VAFs information to the mutations, we were able to infer inner relationship between the nodes which got lost with binary representation of M matrix.</p>
+
+<h2 id="maximum-parsimony">Maximum Parsimony</h2>
+<ul>
+  <li>In real world experiments, we are not gurranteed to get perfect phylogeny from the sequencing, and that’s where the principle of maximum parsimony plays its role.</li>
+  <li>Our aim is to generate parsimonious tree from the input data, i.e. a tree which can represent the M matrix in the best possible representation.</li>
+  <li>Algorithm (It uses distance based clustering for generation of tree, and Fitcher’s small parsimony principle for labeling of derived clones)
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Create</span> <span class="n">a</span> <span class="n">separate</span> <span class="n">cluster</span> <span class="k">for</span> <span class="n">each</span> <span class="n">node</span><span class="o">.</span>
+<span class="nf">Iteratively</span><span class="o">(</span><span class="n">till</span> <span class="n">we</span> <span class="n">have</span> <span class="n">only</span> <span class="n">one</span> <span class="n">cluster</span> <span class="n">left</span><span class="o">):</span>
+  <span class="nc">Given</span> <span class="n">all</span> <span class="n">of</span> <span class="n">the</span> <span class="n">clusters</span><span class="o">,</span>
+  <span class="n">merge</span> <span class="n">two</span> <span class="n">clusters</span> <span class="n">which</span> <span class="n">has</span> <span class="n">the</span> <span class="n">minimum</span> <span class="n">distance</span><span class="o">.</span>
+</code></pre></div>    </div>
+    <p>where</p>
+
+\[distance(a, b) = \frac{distance(a) + distance(b)}{2},\]
+
+    <p>and initial distance between two clones are calculated as the edit distance between two clones.</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Given : Tree
+At first,
+    In bottom up fashion, for each location(k) of node i,$$
+            Cn_i^k = \begin{cases}
+            \cup(Cn_j^k) &amp; if \cap(Cn_j^k) = \phi, where\ n_j = child(n_i)\\
+            \cap(Cn_j^k) &amp; otherwise\\
+            \end{cases}
+            $$
+            In the top down fashion, for each location(k) of node i,$$
+                Cn_i^k = \begin{cases}
+                Cn_i^k = Cn_j^k &amp; if Cn_j^k \in Cn_i^k, where\ n_j^k = parent(n_i^k)\\
+                Cn_i^k = random(Cn_i^k, 1) &amp; otherwise
+                \end{cases}
+            $$
+
+</code></pre></div></div>
+<h2 id="mixphy">MixPhy</h2>
+<ul>
+  <li>With Fletcher’s Algorithm and Agglomerative clustering, we aimed to find the best parsimonious tree from the M but it does not takes into the account key factors that clones in M might have been mixed.</li>
+  <li>That’s where the problem of Maximum parsimony comes into account. The problem states that we have to find the best steiner tree from the input M.</li>
+  <li>MixPhy solved this Np-hard problem heuristically by restructing the input as a perfect graph and coloring rows which will get split into multiple clones.</li>
+  <li>Algorithm
+    <ul>
+      <li>For the given M, create a graph, G in which two columns are connected if either one is contained in another.
+  where, contained is defined as if all of the element are either $\leq$ or $\geq$.</li>
+      <li>As the containment is a transitive in nature,</li>
+      <li>i.e. if {0, 0, 1} is contained in {0, 1, 1} and {0, 1, 1} is contained in {1, 1, 1} then {0, 0, 1} is also contained in {1, 1, 1}</li>
+      <li>Thus the output graphs becomes perfect in nature, and the problem of finding cliques becomes polynomially complex.</li>
+      <li>If we observe the complement of G is the conflict graph in which any two columns are connected if both are conflicting in nature.</li>
+      <li>Thus coloring a clique of graph G, with the same color will lead to no two adjacent columns having the same color in the conflict graph.</li>
+      <li>and for each row in M:
+  if color of all of the mutated column is same, then we do not need to split it
+  otherwise it will get splitted into k different rows where k are the number of unique colors required to color that row.</li>
+    </ul>
+  </li>
+</ul>]]></content><author><name></name></author><category term="notes" /><category term="mixphy" /><category term="clonefinder" /><category term="phylogeny" /><category term="main" /><summary type="html"><![CDATA[Phylogeny]]></summary></entry></feed>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Notes & Thoughts" property="og:site_name"/>
+    <meta content=" Machine Learning | Explainability Artificial Intelligence | Natural Language Processing " property="og:description">
+
+    <meta content="https://kdhingra307.github.io/about/" property="article:author">
+    <meta property="og:locale" content="en_IN" /><meta content="Colorization - Sampling Color from GrayScale and I.R. Images" property="og:title">
+    <meta content="article" property="og:type">
+    <meta content="https://kdhingra307.github.io/notes/study-of-colorization" property="og:url">
+    <title>Colorization - Sampling Color from GrayScale and I.R. Images</title><link rel="canonical" href="https://kdhingra307.github.io/notes/study-of-colorization"/>
+    <link rel="apple-touch-icon" href="">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/png" sizes="16x16"/>
+    <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default"/>
+
+    <link rel="alternate" type="application/rss+xml" href="https://kdhingra307.github.io/feed.xml">
+
+    <script>
+        MathJax = {
+            options: {
+                skipHtmlTags: {'[-]': ['code', 'pre']},
+            },
+            tex: {
+                inlineMath: [ ['$','$'] ],
+                processEscapes : true,
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+
+
+    <div class="container">                    
+        <div class = "box"><header>
+    <div class="dashboard disable-select">
+        <div class="site-heading profile-board-col">
+           <h4 class="medium"><a href="/">Notes & Thoughts</a></h4>
+        </div>
+        <div class="userboard profile-board-col">
+            <div class="username">
+                <p class="title-sans"><a href="/" style="text-decoration: none;">Karan Dhingra</a></p>
+            </div>
+            <div class="userdesc">
+                <p class="title-sans">Machine Learning | Explainability Artificial Intelligence | Natural Language Processing</p>
+            </div> 
+        </div>
+    </div>
+    <div class="avatar disable-select" title="click me to know more">
+        <a class="avatar-link" href="/">
+            <img src="/assets/img/profile.png" class="avatar-img" alt="avatar" style="max-width:100%"/>
+        </a>
+    </div>
+    <div class="main-site-subheader menu disable-select">
+        <div class="home">
+            <a style="text-decoration: none;" href="/about">
+                <svg class="icon-home" width="18" height="19" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9777 21.6138V19.6138C20.9777 18.553 20.5563 17.5356 19.8061 16.7854C19.056 16.0353 18.0386 15.6138 16.9777 15.6138H8.97768C7.91682 15.6138 6.8994 16.0353 6.14926 16.7854C5.39911 17.5356 4.97768 18.553 4.97768 19.6138V21.6138"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.9777 11.6138C15.1868 11.6138 16.9777 9.82298 16.9777 7.61385C16.9777 5.40471 15.1868 3.61385 12.9777 3.61385C10.7685 3.61385 8.97768 5.40471 8.97768 7.61385C8.97768 9.82298 10.7685 11.6138 12.9777 11.6138Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="home-p">About</p>
+            </a>
+        </div>
+        <div class="categories">
+            <a style="text-decoration: none;" href="/tags">
+            <svg class="icon-category" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 9.5H20"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15.5H20"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 3.5L8 21.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 3.5L14 21.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>                               
+            <p class="categories-p">Tags</p>
+            </a>
+        </div>
+        <div class="rss">
+            <a style="text-decoration: none;" href="/feed.xml">
+                <svg class="icon-rss" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 11.5C6.38695 11.5 8.67613 12.4482 10.364 14.136C12.0518 15.8239 13 18.1131 13 20.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 4.5C8.24346 4.5 12.3131 6.18571 15.3137 9.18629C18.3143 12.1869 20 16.2565 20 20.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 20.5C5.55228 20.5 6 20.0523 6 19.5C6 18.9477 5.55228 18.5 5 18.5C4.44772 18.5 4 18.9477 4 19.5C4 20.0523 4.44772 20.5 5 20.5Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>    
+            <p class="rss-p">RSS</p>
+            </a>
+        </div>
+
+    </div>
+    <div class="searchbar search-container">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <label for="search-input"></label>
+        <input type="text" oninput="changeResultContainerDisp(this.value)" id="search-input" autocomplete="off" placeholder="Search..."/>
+        <ul id="results-container"></ul>
+    </div>
+    <script src="/assets/js/simple-jekyll-search.min.js"></script>
+    <script>
+        function changeResultContainerDisp(val) {
+            if (val) {
+                document.getElementById("results-container").style.display = "block";
+                document.getElementById("search-input").addEventListener('blur', function() {
+                    document.addEventListener('click', function(event) {
+                        var isClickInside = document.getElementById("results-container").contains(event.target);
+                        if (!isClickInside) {
+                            document.getElementById("results-container").style.display = "none";
+                        }
+                    })
+                }) 
+            }  else {
+                document.getElementById("results-container").style.display = "none";
+            }
+        }
+        var sjs = SimpleJekyllSearch({
+                    searchInput: document.getElementById('search-input'),
+                    resultsContainer: document.getElementById('results-container'),
+                    json: '/search.json',
+                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="https://kdhingra307.github.io{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: "Inter !important"; font-weight: 600;">{title}</p></a></li>',
+                    noResultsText: 'No results found',
+                    fuzzy: false,
+                    limit: 4
+                    })
+
+
+
+    </script>
+</header>
+<main><div class="content"><p>Given a grayscale image, it is a daunting task, even for a human, to visualize it in color. See Figure 1 for examples. However, a human may try to find semantic clues like texture and world knowledge to assign colors to objects. For example, the grass is mostly green, or the sky is mostly blue. But these clues may also fail sometimes, as shown in Figure 1(middle). Thus, in this work, the focus was on assigning a plausible set of colors to the Image, which may or may not be the same as the ground truth.</p>
+
+<p><img src="../_assets/imgs/2021-01-21-15-43-47.png" alt="" /></p>
+
+<p><em>Fig:1 GrayScale Images and Corresponding Color</em></p>
+
+<blockquote>
+  <p>The primary motivation behind pursuing this problem was that many images do not have color information. Also, the problem of Colorization is self-supervised and does not require a pair-wise dataset.</p>
+</blockquote>
+
+<p>The aim is to solve it in generative fashion, such that if we feed the same grayscale Image to the network k times, it may generate different output each time. A generative network’s benefit is that it may color the cloth’s stripes (Figure 2), gray or red.</p>
+
+<p><img src="../_assets/imgs/2021-01-22-11-34-00.png" alt="" /></p>
+
+<p><em>Fig:2 Plants in the left Image are entirely green, not in the right</em></p>
+
+<p>The solution is based on PixColor, which is state of the art autoregressive generative neural networks for Colorization, i.e., the output of $i^{th}$ pixel is not just conditioned on the latent representation of the grayscale Image, X but also on the previous outputs, $[i-t, i-t+1, i-t+2\ …\ i-1]$ where t denotes the receptive field.</p>
+
+<p>Given $X \in [H, W]$, we first extracts the features $Y_1$ using Resnet-101 of size $[\frac{H}{4}, \frac{W}{4}, 1024]$. These features are then passed into an adaption network and use three convolution layers to adapt the features required by pixelcnn. The output from the adaption network is of size $[\frac{H}{4}, \frac{W}{4}, 64]$, and is fed into conditional pixelcnn. It masks the weights of a convolutional layer to prohibit pixel $x_i$ from using any information about the future samples $(x_{i+1:N})$.</p>
+
+<p>Training is the same as that of any other end-to-end trainable architecture (as ground truth data was used under teacher training mechanism), but during testing, for each pixel $i$, the class is sampled from a multinomial distribution defined by the softmax output of the network.</p>
+
+<p><img src="../_assets/imgs/2021-01-22-15-36-30.png" alt="" />
+<em>Fig:3 Result of Colorization Algorithm</em></p>
+
+<p>The first seven images in carousal(at the top) are the PixColor algorithm results with key insights from each of the Images.</p>
+
+<h2 id="extension-towards-ir-images">Extension towards I.R. images</h2>
+
+<p>I decided to continue working on image colorization during my next semester, focusing on ​reducing the artifacts and ​improving larger objects’ coloring​. The output from pixelcnn is given to a fully convolutional network, acting as a denoiser, inspired by Tacotron, a source synthesis architecture.
+<img src="../_assets/imgs/2021-01-22-15-16-49.png" alt="" />
+<em>Fig:4 Correction of Green Artifact as shown in left Image</em></p>
+
+<p>After that, my professor suggested applying image colorization on I.R. images. In applications under low lighting, I.R. cameras come in handy, but interpreting I.R. images is not straightforward for a human, and hence translating to RGB improves its understandability. I.R. images introduced two challenges, i) it is no longer a self-supervised task and requires a parallel dataset, ii) it is computationally expensive since with grayscale images, we can learn the color information at less spatial resolution(Figure 5-middle) and upscale it, with minimal impact on visual quality but with I.R. images, we need to learn Luminicance too(Figure 5-bottom).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input Image</th>
+      <th><img src="../_assets/imgs/2021-01-22-15-22-11.png" alt="" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Color channels<br /> downscaled and<br /> Interploated</td>
+      <td><img src="../_assets/imgs/2021-01-22-15-22-58.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td>All channels are<br /> downscaled and<br /> interpolated</td>
+      <td><img src="../_assets/imgs/2021-01-22-15-23-21.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Figure 5: Effect of downsampling on image quality</em></p>
+
+<p>For I.R. to RGB, I did not directly use PixelColor to generate color images but first used ImageGAN with wassterin loss. It ended up being blurry because we were averaging the loss over all of the pixels (Table - 1).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input - IR</th>
+      <th>Target - RGB</th>
+      <th>Output - RGB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-22-15-41-01.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-22-15-41-24.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-22-15-41-32.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-22-15-42-40.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-22-15-42-49.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-22-15-42-57.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Table:1 Blurry Output when GAN’s are not used</em></p>
+
+<p>An I.R. image is first passed through GAN, which generates grayscale output followed by PixColor for sampling RGB from the generated grayscale.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input I.R.</th>
+      <th>Target GrayScale</th>
+      <th>Generated GrayScale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-24-19-26-49.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-27-04.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-27-15.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-24-19-28-14.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-28-30.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-28-46.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-24-19-29-55.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-30-02.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-30-08.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-24-19-44-27.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-44-42.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-44-49.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-24-19-45-59.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-46-12.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-46-25.png" alt="" /></td>
+    </tr>
+    <tr>
+      <td><img src="../_assets/imgs/2021-01-24-19-48-05.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-48-17.png" alt="" /></td>
+      <td><img src="../_assets/imgs/2021-01-24-19-48-30.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Table 2: Output of ImageGAN</em></p>
+
+<p>The ImageGAN model produced close to ground truth for many situations (Table 2 first four rows). Still, the model’s performance deteriorated when uncommon objects were present in the I.R. image, like a person on the cycle or person themselves, highlighting the importance of richer data sources.</p>
+
+<p>The last five images in carousal(at the top) are the results of the I.R. to color algorithm with key insights from each of the Images.</p>
+
+<h2 id="datasets">Datasets</h2>
+
+<p>The ADE20K  scene parsing dataset was used for PixColor training; it has 20K training and 1.5k validation samples. Also, there was a pretrained resnet101 network, which helped speed up the training process.
+For I.R. to RGB translation, the kaist multispectral benchmark was used. It is divided into multiple files, with each file consisting of over 10000 images, but it lacks the spatial resolution. I tested six different datasets that have pair-wise I.R. and RGB images and found it to be most aligned.</p>
+
+<h2 id="training-and-analysis">Training and Analysis</h2>
+<p>PixColor was trained for 50 epochs, in 100% teacher-training mechanism, i.e. during training pixelcnn autoregressive considers ground truth samples as previous t inputs. The ImageGAN was trained for 150 epochs, I stopped after 150 epochs due to computation constraints. Evaluating generative models is very hard, that’s why I tested the color distribution generated by the PixColor and observed biases towards the brown color which was present in the ADE20k data itself.</p>
+
+<p><img src="../_assets/imgs/2021-01-24-21-53-44.png" alt="" /></p>
+
+<p>Currently, I am studying more about GANs to train them effectively with fewer data points, if you have any questions or suggestion, please let me know on <a href="https://twitter.com/itskdme">Twitter</a> or <a href="https://www.instagram.com/itskd.me/">instagram</a>.</p>
+
+<h3 id="references">References</h3>
+<ul>
+  <li>Guadarrama, Sergio, et al. “Pixcolor: Pixel recursive colorization.” arXiv preprint arXiv:1705.07208 (2017).</li>
+  <li>Salimans, Tim, et al. “Pixelcnn++: Improving the pixelcnn with discretized logistic mixture likelihood and other modifications.” arXiv preprint arXiv:1701.05517 (2017).</li>
+  <li>Oord, Aaron van den, et al. “Conditional image generation with pixelcnn decoders.” arXiv preprint arXiv:1606.05328 (2016).</li>
+  <li>Zhou, Bolei, et al. “Scene parsing through ade20k dataset.” Proceedings of the IEEE conference on computer vision and pattern recognition. 2017.</li>
+  <li>Hwang, Soonmin, et al. “Multispectral pedestrian detection: Benchmark dataset and baseline.” Proceedings of the IEEE conference on computer vision and pattern recognition. 2015.</li>
+  <li>Wang, Yuxuan, et al. “Tacotron: Towards end-to-end speech synthesis.” arXiv preprint arXiv:1703.10135 (2017).</li>
+  <li>Arjovsky, Martin, Soumith Chintala, and Léon Bottou. “Wasserstein generative adversarial networks.” International conference on machine learning. PMLR, 2017.</li>
+  <li>Isola, Phillip, et al. “Image-to-image translation with conditional adversarial networks.” Proceedings of the IEEE conference on computer vision and pattern recognition. 2017.</li>
+</ul>
+
+</div>
+<hr><!-- Add backlinks to the current page --><div class="related" id="jekyll-seamless-relatedposts">
+    <h4 class="medium-small">Related Posts</h4>
+    <div class="related-wrapper"><div class="related-group"><a href="/notes/tree_metrics_in_detail">
+            <p class="related-title">How does tree metrics works</p>
+            <p class="related-excerpt">Comparing MLTED, RF distance, and TreeVec
+
+MLTED
+
+
+  
+    
+      
+      
+    
+  
+  
+    
+      Tree 1
+      Tree 2
+    
+    
+      
+     ...</p>
+          </a></div><div class="related-group"><a href="/notes/basics_of_clonal_evolution">
+            <p class="related-title">Basics of Phylogeny</p>
+            <p class="related-excerpt">Phylogeny
+
+Given a VAFs, the task is to generate ancestoral tree such that it adheres to the principles of perfect phylogeny.
+
+Terminolog...</p>
+          </a></div></div>
+      <br/>
+    </div></main><div id="copyright">
+    <p id="copyright-notice">Copyright © 2020-2023 Karan Dhingra</p>
+</div>
+</div>
+        <button class="scroll-to-top" id="scroll-to-top"><i class="fa fa-chevron-up"></i></button>
+    </div>
+
+    <script>
+        document.getElementById("scroll-to-top").addEventListener("click", function() {
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        });
+    </script></body>
+
+
+
+</html><script>for(let h of document.querySelectorAll('h2[id],h3[id],h4[id]'))h.innerHTML+=` <a href="#${h.id}" aria-hidden="true">#</a>`</script>
