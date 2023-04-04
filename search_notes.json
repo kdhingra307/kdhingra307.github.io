@@ -2,6 +2,16 @@
   
     {
 
+      "title"    : "",
+      "url"      : "/posts/2023-04-05-Git-sync-with-the-help-of-a-shell",
+      "category" : "",
+      "tags"     : "",
+      "content"  : ""
+
+    } ,
+  
+    {
+
       "title"    : "Colorization - Sampling Color from GrayScale and I.R. Images",
       "url"      : "/notes/study-of-colorization",
       "category" : "",
