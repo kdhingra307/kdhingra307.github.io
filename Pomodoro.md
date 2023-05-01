@@ -9,7 +9,7 @@ tags: []
 - [ ] 07:00 Wake Up/Exercise/Bath
 - [ ] 07:45 Introduction of Sentence Encoders ~ Study
 - [ ] 09:45 Pomodoro Template
-- [ ] 10:00 Office (Kubeflow)
+- [ ] 10:00 Office (Ad Relevance New Advertisers >> Kubeflow)
 - [ ] 11:30 Bravo (ClickUp update)
 - [ ] 12:30 SRE Meet (Ad relevance Documentation)
 - [ ] 13:30 Search Pod (Setting up source for skyline)
