@@ -11,9 +11,9 @@ tags: []
 - [ ] 09:45 Pomodoro Template
 - [ ] 10:00 Office (Ad Relevance New Advertisers >> Kubeflow)
 - [ ] 11:30 Bravo (ClickUp update)
-- [ ] 12:30 SRE Meet (Ad relevance Documentation)
+- [ ] 12:10 Leave for 32 Milestone
 - [ ] 13:30 Search Pod (Setting up source for skyline)
-- [ ] 14:30 Break
+- [ ] 14:30 BREAK (everything post this is moot tbh; like it will be decided based on mahol)
 - [ ] 15:00 Ad relevance
 - [ ] 16:00 Discussion and chit-chat // Kubeflow <<<< Ad Relevance
 - [ ] 17:00 Eyes Rest/Out for stuff
