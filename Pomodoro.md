@@ -22,3 +22,6 @@ tags: []
 - [ ] 22:00 Ad Relevance Research Papers / Ipl (contd.)
 - [ ] 00:00 Stranger by AlbusCampus
 - [ ] 01:00 SLEEP
+
+- how can we model the next step instead of similar
+- user stay on the publisher side as metric
